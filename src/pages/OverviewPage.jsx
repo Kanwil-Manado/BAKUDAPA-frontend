@@ -10,9 +10,14 @@ import SalesChannelChart from "../components/overview/SalesChannelChart";
 const OverviewPage = () => {
 	return (
 		<div className='flex-1 overflow-auto relative z-10'style={{ backgroundColor: '#ffff' }}>
-			<Header title='Overview' />
+			<Header title='BAKUDAPA' />
 
 			<main className='max-w-7xl mx-auto py-6 px-4 lg:px-8'>
+
+				<div className='text-blue-400 font-medium text-2xl py-4 '>
+					<h1>Halo,</h1>
+					<h2>Selamat Bakudapa Lagi !</h2>
+				</div>
 				{/* STATS */}
 				<motion.div
 					className='grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 mb-8'
@@ -20,6 +25,7 @@ const OverviewPage = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1 }}
 				>
+					
 					<StatCard name='Total Sales' icon={Zap} value='$12,345' color='#6366F1' />
 					<StatCard name='New Users' icon={Users} value='1,234' color='#8B5CF6' />
 					<StatCard name='Total Products' icon={ShoppingBag} value='567' color='#EC4899' />

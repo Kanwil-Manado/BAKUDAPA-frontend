@@ -28,7 +28,7 @@ const Sidebar = () => {
 			}`}
 			animate={{ width: isSidebarOpen ? 256 : 80 }}
 		>
-			<div className='h-full bg-[#176AD1] p-4 flex flex-col border-r border-gray-700'>
+			<div className='h-full bg-[#176AD1] bg-opacity-50 p-4 flex flex-col border-r border-gray-700'>
 				<motion.button
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
