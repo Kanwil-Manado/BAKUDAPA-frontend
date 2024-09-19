@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle, faComments } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle, faCommentDots} from '@fortawesome/free-solid-svg-icons';
+import SearchBar from './searchBar';
 
 const Header = ({ title }) => {
   return (
@@ -24,11 +25,7 @@ const Header = ({ title }) => {
 
         {/* Bagian tengah: Search Bar */}
         <div className="flex-1 max-w-lg mx-auto">
-          <input 
-            type="text"
-            placeholder="Search..."
-            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-          />
+			<SearchBar></SearchBar>
         </div>
 
         {/* Bagian kanan: Ikon Chat dan Akun */}
@@ -36,8 +33,8 @@ const Header = ({ title }) => {
           {/* Ikon Chat */}
           <div className="relative">
             <FontAwesomeIcon 
-              icon={faComments} 
-              className="text-gray-600 text-2xl" 
+              icon={faCommentDots} 
+              className="text-[#176AD1] text-2xl" 
             />
             {/* Indikator jumlah pesan baru */}
             <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-600"></span>
@@ -47,7 +44,7 @@ const Header = ({ title }) => {
           <div className="flex items-center">
             <FontAwesomeIcon 
               icon={faUserCircle} 
-              className="text-gray-600 text-2xl" 
+              className="text-[#176AD1] text-2xl" 
             />
           </div>
         </div>
