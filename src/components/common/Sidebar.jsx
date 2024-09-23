@@ -1,4 +1,4 @@
-import { BarChart2, DollarSign, Menu, Settings, ShoppingBag, ShoppingCart, TrendingUp, Users } from "lucide-react";
+import { Home, List, Menu,Landmark,MessageCircleMore,CircleUserRound, ChartColumn } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -6,16 +6,15 @@ import { Link } from "react-router-dom";
 const SIDEBAR_ITEMS = [
 	{
 		name: "Beranda",
-		icon: BarChart2,
-		color: "black",
+		icon: Home,
+		color: "#F59E0B",
 		href: "/",
 	},
-	{ name: "Per Daerah", icon: ShoppingBag, color: "#8B5CF6", href: "/products" },
-	{ name: "Akun", icon: Users, color: "#EC4899", href: "/users" },
-	{ name: "Sales", icon: DollarSign, color: "#10B981", href: "/sales" },
-	{ name: "Orders", icon: ShoppingCart, color: "#F59E0B", href: "/orders" },
-	{ name: "Analytics", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
-	{ name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
+	{ name: "Dashboard", icon: ChartColumn, color: "#3B82F6", href: "/dashboard" },
+	{ name: "KPPN", icon: Landmark, color: "#3B82F6", href: "/kppn" },
+	{ name: "Daerah", icon: List, color: "#8B5CF6", href: "/daerah" },
+	{ name: "Obrolan", icon: MessageCircleMore, color: "#10B981", href: "/obrolan" },
+	{ name: "Akun", icon: CircleUserRound, color: "#6EE7B7", href: "/akun" },
 ];
 
 const Sidebar = () => {
@@ -41,7 +40,7 @@ const Sidebar = () => {
 				<nav className='mt-8 flex-grow'>
 					{SIDEBAR_ITEMS.map((item) => (
 						<Link key={item.href} to={item.href}>
-							<motion.div className='flex items-center p-4 text-sm font-medium rounded-lg hover:bg-[#c3ebfa] transition-colors mb-2'>
+							<motion.div className='flex items-center p-4 text-sm font-medium rounded-lg hover:bg-[#c3ebfa] transition-colors mb-6'>
 								<item.icon size={20} style={{ color: item.color, minWidth: "20px" }} />
 								<AnimatePresence>
 									{isSidebarOpen && (

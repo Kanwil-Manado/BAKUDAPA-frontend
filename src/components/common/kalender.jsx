@@ -42,9 +42,9 @@ const Kalender = () => {
     const daysInMonth = getDaysInMonth(currentMonth, year);
 
     return (
-        <div className="bg-[#ffff] shadow-lg p-4 rounded-lg w-full md:w-full">
+        <div className=" w-full md:w-full">
             <div className="flex flex-row gap-2 justify-center border-b-2 border-[#dddd] mb-4 ">
-                <span className="text-[#ffc400] font-light text-lg">
+                <span className="text-[#2D4059] font-light text-lg">
                     <FontAwesomeIcon icon={faCalendarDays} />
                 </span>
                 <h3 className="text-lg font-semibold text-[#2D4059] text-center mb-2">

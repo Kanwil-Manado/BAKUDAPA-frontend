@@ -1,13 +1,12 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import Sidebar from "./components/common/Sidebar";
-import OverviewPage from "./pages/OverviewPage";
-import ProductsPage from "./pages/ProductsPage";
-import UsersPage from "./pages/UsersPage";
-import SalesPage from "./pages/SalesPage";
-import OrdersPage from "./pages/OrdersPage";
-import AnalyticsPage from "./pages/AnalyticsPage";
-import SettingsPage from "./pages/SettingsPage";
+import BerandaPage from "./pages/BerandaPage";
 import LoginPage from "./pages/login";
+import DashboardPage from "./pages/DashboardPage";
+import KppnPage from "./pages/KppnPage";
+import DaerahPage from "./pages/DaerahPage";
+import ObrolanPage from "./pages/ObrolanPage";
+import AkunPage from "./pages/AkunPage";
 
 function App() {
   const location = useLocation(); // Untuk mendapatkan URL saat ini
@@ -32,13 +31,12 @@ function App() {
 
           {/* Routes */}
           <Routes>
-            <Route path='/' element={<OverviewPage />} />
-            <Route path='/products' element={<ProductsPage />} />
-            <Route path='/users' element={<UsersPage />} />
-            <Route path='/sales' element={<SalesPage />} />
-            <Route path='/orders' element={<OrdersPage />} />
-            <Route path='/analytics' element={<AnalyticsPage />} />
-            <Route path='/settings' element={<SettingsPage />} />
+            <Route path='/' element={<BerandaPage />} />
+            <Route path='/dashboard' element={<DashboardPage />} />
+            <Route path='/kppn' element={<KppnPage />} />
+            <Route path='/daerah' element={<DaerahPage />} />
+            <Route path='/obrolan' element={<ObrolanPage />} />
+            <Route path='/akun' element={<AkunPage />} />
           </Routes>
         </div>
       )}
