@@ -4,7 +4,7 @@ import SearchBar from './searchBar';
 
 const Header = ({ title }) => {
   return (
-    <header className="bg-[#ffff] backdrop-blur-md shadow-lg">
+    <header className="bg-[#f6faff] backdrop-blur-md shadow-lg">
       <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-5">
         {/* Bagian kiri: Logo dan Title */}
         <div className="flex items-center gap-5">
@@ -18,9 +18,9 @@ const Header = ({ title }) => {
           </div>
 
           {/* Title */}
-          <div>
+          {/* <div>
             <h1 className="text-3xl font-semibold text-[#176AD1]">{title}</h1>
-          </div>
+          </div> */}
         </div>
 
         {/* Bagian tengah: Search Bar */}

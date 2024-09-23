@@ -6,6 +6,11 @@ export default {
 		fontFamily: {
 		  sans: ['Plus Jakarta Sans', 'sans-serif'], // Mengganti font sans bawaan
 		},
+
+		fontSize: {
+			'xxs': '0.6em', // Menambahkan ukuran lebih kecil dari 'xs' (10px)
+		  },
+
 		keyframes: {
 		  gradient: {
 			'0%': { backgroundPosition: '0% 0%' },
@@ -31,8 +36,13 @@ export default {
 		backgroundImage: {
 		  'gradient-blue-yellow': 'linear-gradient(315deg, #0077B6 3%, #0096C7 38%, #00B4D8 68%, #FFD60A 98%)',
 		},
+
+		
 	  },
+
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/line-clamp'),
+	],
   };
   

@@ -1,17 +1,11 @@
-/* src/index.css */
-
-/* Impor Font Montserrat */
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
-/* Import Tailwind CSS */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Terapkan Font Montserrat secara global */
+
 body {
   @apply font-sans;
 }

@@ -1,23 +1,31 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from "framer-motion";
 
-// Fungsi untuk mendapatkan jumlah hari dalam bulan
+// Fungsi untuk mendapatkan jumlah hari dalam sebulan
 const getDaysInMonth = (month, year) => {
     return new Date(year, month + 1, 0).getDate();
 };
 
-// Fungsi untuk mendapatkan nama bulan
+// Nama-nama bulan
 const monthNames = [
     "Januari", "Februari", "Maret", "April", "Mei", "Juni", 
     "Juli", "Agustus", "September", "Oktober", "November", "Desember"
 ];
 
+// Nama-nama hari
+const dayNames = ["Ming", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
+
 const Kalender = () => {
     const [year] = useState(new Date().getFullYear());
     const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
     const [direction, setDirection] = useState("right");
+
+    // Tanggal hari ini
+    const today = new Date().getDate();
+    const thisMonth = new Date().getMonth();
+    const thisYear = new Date().getFullYear();
 
     // Fungsi untuk menggeser ke bulan sebelumnya
     const handlePrevMonth = () => {
@@ -34,8 +42,15 @@ const Kalender = () => {
     const daysInMonth = getDaysInMonth(currentMonth, year);
 
     return (
-        <div className="bg-[#176AD1] bg-opacity-20 shadow-lg p-4 rounded-lg w-full md:w-1/2">
-            <h3 className="text-xl font-semibold text-[#2D4059] text-center mb-4">KALENDER {year}</h3>
+        <div className="bg-[#ffff] shadow-lg p-4 rounded-lg w-full md:w-full">
+            <div className="flex flex-row gap-2 justify-center border-b-2 border-[#dddd] mb-4 ">
+                <span className="text-[#ffc400] font-light text-lg">
+                    <FontAwesomeIcon icon={faCalendarDays} />
+                </span>
+                <h3 className="text-lg font-semibold text-[#2D4059] text-center mb-2">
+                    KALENDER {year}
+                </h3>
+            </div>
 
             <div className="flex justify-between items-center mb-4 px-2">
                 <motion.button
@@ -63,13 +78,34 @@ const Kalender = () => {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: direction === "right" ? -300 : 300 }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
-                        className="absolute w-full grid grid-cols-7 p-2 gap-2 text-center text-xs"
+                        className="absolute w-full p-2"
                     >
-                        {Array.from({ length: daysInMonth }, (_, day) => (
-                            <div key={day} className="p-2 bg-white text-[#2D4059] rounded-md border  border-[#2D4059]">
-                                {day + 1}
-                            </div>
-                        ))}
+                        {/* Header untuk nama hari */}
+                        <div className="grid grid-cols-7 gap-2 text-center text-xs font-bold text-[#2D4059] mb-2">
+                            {dayNames.map((day) => (
+                                <div key={day} className="p-2">{day}</div>
+                            ))}
+                        </div>
+
+                        {/* Tanggal */}
+                        <div className="grid grid-cols-7 gap-2 text-center text-xs">
+                            {Array.from({ length: daysInMonth }, (_, day) => {
+                                const date = day + 1;
+                                const isToday = date === today && currentMonth === thisMonth && year === thisYear;
+                                return (
+                                    <div
+                                        key={date}
+                                        className={`p-2 rounded-md border border-[#2D4059] ${
+                                            isToday
+                                                ? "bg-[#176AD1] text-white"
+                                                : "bg-[#f6faff] text-[#2D4059]"
+                                        }`}
+                                    >
+                                        {date}
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </motion.div>
                 </AnimatePresence>
             </div>

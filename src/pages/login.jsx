@@ -155,7 +155,7 @@ const LoginPage = () => {
                   htmlFor="remember_me"
                   className="ml-2 block text-sm text-gray-900"
                 >
-                  Remember me
+                  Ingat Saya
                 </label>
               </div>
 
@@ -164,7 +164,7 @@ const LoginPage = () => {
                   href="#"
                   className="font-medium text-blue-600 hover:text-blue-500"
                 >
-                  Forgot your password?
+                  Lupa Sandi ?
                 </a>
               </div>
             </div>
@@ -174,7 +174,7 @@ const LoginPage = () => {
                 type="submit"
                 className="w-1/2 flex max-w-xs flex justify-center py-3 px-4 border border-transparent rounded-full shadow-lg text-sm font-medium text-white bg-[#176AD1] hover:bg-[#ebb434] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300"
               >
-                Login
+                Masuk
               </button>
             </div>
           </form>
